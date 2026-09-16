@@ -1,4 +1,4 @@
-# Mini Job Queue Dashboard
+# Job Queue Dashboard
 
 A full-stack job queue dashboard built with React and NestJS.
 
