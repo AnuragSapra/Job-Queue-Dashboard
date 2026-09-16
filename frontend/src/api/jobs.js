@@ -27,7 +27,7 @@ export async function createJob(jobData) {
 }
 
 export async function updateJobStatus(id, status) {
-  const response = await fetch(`${API_URL}/${id}/status`, {
+  const response = await fetch(`${API_URL}/jobs/${id}/status`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
@@ -44,7 +44,7 @@ export async function updateJobStatus(id, status) {
 }
 
 export async function deleteJob(id) {
-  const response = await fetch(`${API_URL}/${id}`, {
+  const response = await fetch(`${API_URL}/jobs/${id}`, {
     method: "DELETE",
   });
 
