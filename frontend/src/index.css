@@ -1,0 +1,322 @@
+:root {
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  color: #e5e7eb;
+  background: #0f172a;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #0f172a;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.dashboard {
+  width: min(1100px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 48px 0;
+}
+
+.dashboard-header {
+  margin-bottom: 32px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #94a3b8;
+}
+
+.dashboard-header h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.1;
+}
+
+.subtitle {
+  margin: 12px 0 0;
+  color: #94a3b8;
+  font-size: 1rem;
+}
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 28px;
+  padding: 6px;
+  width: fit-content;
+  max-width: 100%;
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 12px;
+}
+
+.filter-button {
+  border: 0;
+  border-radius: 8px;
+  padding: 9px 14px;
+  color: #94a3b8;
+  background: transparent;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.filter-button:hover {
+  color: #e2e8f0;
+  background: #334155;
+}
+
+.filter-button.active {
+  color: #f8fafc;
+  background: #475569;
+}
+
+.job-list {
+  display: grid;
+  gap: 14px;
+}
+
+.job-card {
+  padding: 20px;
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 14px;
+}
+
+.job-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.job-type {
+  margin: 0 0 6px;
+  color: #94a3b8;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.job-card h2 {
+  margin: 0;
+  color: #f8fafc;
+  font-size: 1.1rem;
+}
+
+.status-badge {
+  flex-shrink: 0;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.status-pending {
+  color: #fbbf24;
+  background: #422006;
+}
+
+.status-running {
+  color: #60a5fa;
+  background: #172554;
+}
+
+.status-completed {
+  color: #4ade80;
+  background: #052e16;
+}
+
+.status-failed {
+  color: #f87171;
+  background: #450a0a;
+}
+
+.job-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid #334155;
+}
+
+.action-button,
+.delete-button {
+  border: 1px solid #475569;
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: #e2e8f0;
+  background: #334155;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.action-button:hover {
+  background: #475569;
+  border-color: #64748b;
+}
+
+.delete-button {
+  margin-left: auto;
+  color: #fca5a5;
+  background: transparent;
+  border-color: #7f1d1d;
+}
+
+.delete-button:hover {
+  background: #450a0a;
+  border-color: #991b1b;
+}
+
+.job-form {
+  margin-bottom: 28px;
+  padding: 22px;
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 14px;
+}
+
+.job-form-header {
+  margin-bottom: 20px;
+}
+
+.job-form-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.form-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  align-items: end;
+  gap: 12px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.form-field label {
+  color: #cbd5e1;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.form-field input {
+  width: 100%;
+  border: 1px solid #475569;
+  border-radius: 8px;
+  padding: 10px 12px;
+  color: #f8fafc;
+  background: #0f172a;
+  outline: none;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.form-field input::placeholder {
+  color: #64748b;
+}
+
+.form-field input:focus {
+  border-color: #64748b;
+  box-shadow: 0 0 0 3px rgb(100 116 139 / 20%);
+}
+
+.create-button {
+  border: 1px solid #475569;
+  border-radius: 8px;
+  padding: 10px 16px;
+  color: #f8fafc;
+  background: #334155;
+  white-space: nowrap;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.create-button:hover:not(:disabled) {
+  background: #475569;
+  border-color: #64748b;
+}
+
+.create-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.form-error {
+  margin: 12px 0 0;
+  color: #f87171;
+  font-size: 0.9rem;
+}
+
+.loading-message {
+  margin: 0 0 20px;
+  color: #94a3b8;
+}
+
+.global-error {
+  margin: 0 0 20px;
+  padding: 12px 14px;
+  color: #fca5a5;
+  background: #450a0a;
+  border: 1px solid #7f1d1d;
+  border-radius: 8px;
+}
+
+@media (max-width: 700px) {
+  .dashboard {
+    width: min(100% - 20px, 1100px);
+    padding: 28px 0;
+  }
+
+  .form-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .create-button {
+    width: 100%;
+  }
+
+  .job-card-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .delete-button {
+    margin-left: 0;
+  }
+}
