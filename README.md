@@ -134,9 +134,10 @@ TypeORM's `synchronize` option is enabled for local development. For a productio
 ## Assumptions & Tradeoffs
 
 - SQLite was chosen instead of PostgreSQL to keep setup simple and make the project easy to run locally.
+- The deployed backend also uses SQLite. This is sufficient for the assignment, which explicitly permits SQLite, but a production deployment would use a persistent PostgreSQL database rather than relying on the web service filesystem.
 - Authentication and authorization were not included because they were outside the assignment requirements.
 - Jobs are manually created and their statuses are manually updated; there is no background worker processing jobs.
-- The frontend API URL is configured separately for local and deployed environments.
+- The frontend API URL and backend frontend origin are configured through environment variables for deployed environments.
 
 ## Possible Improvements
 
@@ -144,7 +145,6 @@ If this were developed further, I would consider:
 
 - PostgreSQL for a production deployment
 - Database migrations
-- Environment-based configuration and secrets management
 - Authentication and authorization
 - Pagination for large job lists
 - A real background worker/queue system
@@ -171,6 +171,6 @@ This provides a repeatable way to verify the core business logic and helps preve
 
 ## Live Demo
 
-Frontend: **[Add deployed frontend URL]**
+Frontend: **[https://job-queue-dashboard-3nr0447db-anuragsapras-projects.vercel.app]**
 
-Backend API: **[Add deployed backend URL]**
+Backend API: **[https://job-queue-dashboard-2ucx.onrender.com]**
