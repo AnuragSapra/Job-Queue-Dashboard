@@ -1,7 +1,7 @@
-const API_URL = "http://localhost:3000/jobs";
+const API_URL = import.meta.env.VITE_API_URL;
 
 export async function getJobs() {
-  const response = await fetch(API_URL);
+  const response = await fetch(`${API_URL}/jobs`);
 
   if (!response.ok) {
     throw new Error("Failed to fetch jobs");
@@ -11,7 +11,7 @@ export async function getJobs() {
 }
 
 export async function createJob(jobData) {
-  const response = await fetch(API_URL, {
+  const response = await fetch(`${API_URL}/jobs`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
